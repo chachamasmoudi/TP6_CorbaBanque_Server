@@ -1,16 +1,18 @@
 # TP 6 : Service Banque avec CORBA — Projet Serveur
 
 **Projet :** `TP6_CorbaBanque_Server`
+
 **Technologies :** Java 8 (JDK 8), CORBA, IDL (`idlj`), JNDI, `tnameserv`
 
-#### Rôle de `tnameserv`
+## Rôle de `tnameserv`
 
 `tnameserv` est le service de nommage transitoire de CORBA (fourni avec le JDK 8).
 Il joue le rôle d'**annuaire** : le serveur y publie la référence de son objet distant
 sous un nom (`BK`), et le client la retrouve grâce à ce nom (`lookup("BK")`) sans
 connaître l'adresse du serveur. Il écoute sur le port 900. Il est dit « transitoire »
 car ses enregistrements sont perdus à son arrêt : il doit être lancé **en premier**,
-puis le serveur, puis le client.)
+puis le serveur, puis le client.
+
 ---
 
 ## Objectif
@@ -35,7 +37,7 @@ Développer le côté **serveur** d'une application répartie CORBA : exposer l'
 
 ## Étape 2 : Interface IDL
 
-Fichier `src/Banque.idl` 
+Fichier `src/Banque.idl` :
 
 ```idl
 module corbaBanque {
